@@ -7,23 +7,28 @@
 //
 
 #import "TJLViewController.h"
+#import "TJLProgressView.h"
 
 @interface TJLViewController ()
-
+@property(strong, nonatomic) NSProgress *progress;
+@property(nonatomic) NSUInteger count;
+@property(strong, nonatomic) TJLProgressView *progView;
 @end
 
 @implementation TJLViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-}
+	self.progress = [NSProgress progressWithTotalUnitCount:10];
+    self.count = 0;
+    self.progView = [[TJLProgressView alloc]initWithProgress:self.progress];
+    [self.progView showInNavigationBar:self.navigationController];
+        
+    [[NSRunLoop mainRunLoop]addTimer:[NSTimer timerWithTimeInterval:.5 target:self selector:@selector(incrementProgress:) userInfo:nil repeats:YES] forMode:NSDefaultRunLoopMode];
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+}
+- (IBAction)incrementProgress:(id)sender {
+    [self.progress setCompletedUnitCount:++self.count];
 }
 
 @end

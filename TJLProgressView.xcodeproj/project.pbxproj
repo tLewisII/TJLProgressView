@@ -21,6 +21,7 @@
 		DB14A65E18C8229A00F1D5BF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB14A64018C8229A00F1D5BF /* UIKit.framework */; };
 		DB14A66618C8229A00F1D5BF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB14A66418C8229A00F1D5BF /* InfoPlist.strings */; };
 		DB14A66818C8229A00F1D5BF /* TJLProgressViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB14A66718C8229A00F1D5BF /* TJLProgressViewTests.m */; };
+		DB14A67618C8232D00F1D5BF /* TJLProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB14A67518C8232D00F1D5BF /* TJLProgressView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		DB14A66318C8229A00F1D5BF /* TJLProgressViewTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TJLProgressViewTests-Info.plist"; sourceTree = "<group>"; };
 		DB14A66518C8229A00F1D5BF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DB14A66718C8229A00F1D5BF /* TJLProgressViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TJLProgressViewTests.m; sourceTree = "<group>"; };
+		DB14A67418C8232D00F1D5BF /* TJLProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TJLProgressView.h; path = Source/TJLProgressView.h; sourceTree = "<group>"; };
+		DB14A67518C8232D00F1D5BF /* TJLProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TJLProgressView.m; path = Source/TJLProgressView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +122,8 @@
 				DB14A65218C8229A00F1D5BF /* TJLViewController.m */,
 				DB14A65418C8229A00F1D5BF /* Images.xcassets */,
 				DB14A64318C8229A00F1D5BF /* Supporting Files */,
+				DB14A67418C8232D00F1D5BF /* TJLProgressView.h */,
+				DB14A67518C8232D00F1D5BF /* TJLProgressView.m */,
 			);
 			path = TJLProgressView;
 			sourceTree = "<group>";
@@ -252,6 +257,7 @@
 			files = (
 				DB14A65318C8229A00F1D5BF /* TJLViewController.m in Sources */,
 				DB14A64918C8229A00F1D5BF /* main.m in Sources */,
+				DB14A67618C8232D00F1D5BF /* TJLProgressView.m in Sources */,
 				DB14A64D18C8229A00F1D5BF /* TJLAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
