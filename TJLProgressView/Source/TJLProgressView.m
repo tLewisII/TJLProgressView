@@ -73,13 +73,24 @@ void *observerContext = &observerContext;
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     if(observerContext == context) {
         NSNumber *num = change[NSKeyValueChangeNewKey];
-        CGFloat progress = num.floatValue;
-        CGFloat width = CGRectGetWidth(self.controller.view.frame);
-        CGFloat prog = (width * progress);
-        self.width.constant = prog;
-        [UIView animateWithDuration:.227 animations:^{
-            [self setNeedsLayout];
-        }];
+        CGFloat fractionComplete = num.floatValue;
+        CGFloat width = CGRectGetWidth(self.controller.view.bounds);
+        CGFloat newWidth = (width * fractionComplete);
+
+        if(fractionComplete <= 1) {
+            self.width.constant = newWidth;
+            [UIView animateWithDuration:.227 animations:^{
+                [self setNeedsLayout];
+            }];
+        }
+        else {
+            [UIView animateWithDuration:.227 animations:^{
+                self.alpha = 0;
+            }                completion:^(BOOL done) {
+                [self removeObserver:self forKeyPath:@"progress.fractionCompleted"];
+                [self removeFromSuperview];
+            }];
+        }
     }
 }
 
