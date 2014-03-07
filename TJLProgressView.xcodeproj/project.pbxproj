@@ -7,21 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7426C706635A31F1CC8BE803 /* TJLProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7426C46623F341D2CF3464E6 /* TJLProgressView.m */; };
+		7426C77F7D20C8F867AFE11C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7426CE416F61023BFBD0323E /* Main.storyboard */; };
+		7426CAABBABCAF2FCB160A2A /* TJLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7426CBBE00E77BF34F816897 /* TJLAppDelegate.m */; };
+		7426CFDABB9E9D08B853858B /* TJLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7426C0CCEC67E7E3EA7E94A8 /* TJLViewController.m */; };
 		DB14A63D18C8229A00F1D5BF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB14A63C18C8229A00F1D5BF /* Foundation.framework */; };
 		DB14A63F18C8229A00F1D5BF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB14A63E18C8229A00F1D5BF /* CoreGraphics.framework */; };
 		DB14A64118C8229A00F1D5BF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB14A64018C8229A00F1D5BF /* UIKit.framework */; };
 		DB14A64718C8229A00F1D5BF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB14A64518C8229A00F1D5BF /* InfoPlist.strings */; };
 		DB14A64918C8229A00F1D5BF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DB14A64818C8229A00F1D5BF /* main.m */; };
-		DB14A64D18C8229A00F1D5BF /* TJLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DB14A64C18C8229A00F1D5BF /* TJLAppDelegate.m */; };
-		DB14A65018C8229A00F1D5BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB14A64E18C8229A00F1D5BF /* Main.storyboard */; };
-		DB14A65318C8229A00F1D5BF /* TJLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB14A65218C8229A00F1D5BF /* TJLViewController.m */; };
 		DB14A65518C8229A00F1D5BF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB14A65418C8229A00F1D5BF /* Images.xcassets */; };
 		DB14A65C18C8229A00F1D5BF /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB14A65B18C8229A00F1D5BF /* XCTest.framework */; };
 		DB14A65D18C8229A00F1D5BF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB14A63C18C8229A00F1D5BF /* Foundation.framework */; };
 		DB14A65E18C8229A00F1D5BF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB14A64018C8229A00F1D5BF /* UIKit.framework */; };
 		DB14A66618C8229A00F1D5BF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB14A66418C8229A00F1D5BF /* InfoPlist.strings */; };
 		DB14A66818C8229A00F1D5BF /* TJLProgressViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB14A66718C8229A00F1D5BF /* TJLProgressViewTests.m */; };
-		DB14A67618C8232D00F1D5BF /* TJLProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB14A67518C8232D00F1D5BF /* TJLProgressView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +35,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7426C0CCEC67E7E3EA7E94A8 /* TJLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TJLViewController.m; sourceTree = "<group>"; };
+		7426C113502F157435EE1C96 /* TJLAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TJLAppDelegate.h; sourceTree = "<group>"; };
+		7426C24DB8284AEFDE922D2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7426C46623F341D2CF3464E6 /* TJLProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TJLProgressView.m; path = Source/TJLProgressView.m; sourceTree = "<group>"; };
+		7426C5BC4C2402224E5FDA3B /* TJLProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TJLProgressView.h; path = Source/TJLProgressView.h; sourceTree = "<group>"; };
+		7426CBBE00E77BF34F816897 /* TJLAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TJLAppDelegate.m; sourceTree = "<group>"; };
+		7426CDC4BBB204FC4C17032B /* TJLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TJLViewController.h; sourceTree = "<group>"; };
 		DB14A63918C8229A00F1D5BF /* TJLProgressView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TJLProgressView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB14A63C18C8229A00F1D5BF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DB14A63E18C8229A00F1D5BF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -43,19 +50,12 @@
 		DB14A64618C8229A00F1D5BF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DB14A64818C8229A00F1D5BF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DB14A64A18C8229A00F1D5BF /* TJLProgressView-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TJLProgressView-Prefix.pch"; sourceTree = "<group>"; };
-		DB14A64B18C8229A00F1D5BF /* TJLAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TJLAppDelegate.h; sourceTree = "<group>"; };
-		DB14A64C18C8229A00F1D5BF /* TJLAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TJLAppDelegate.m; sourceTree = "<group>"; };
-		DB14A64F18C8229A00F1D5BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		DB14A65118C8229A00F1D5BF /* TJLViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TJLViewController.h; sourceTree = "<group>"; };
-		DB14A65218C8229A00F1D5BF /* TJLViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TJLViewController.m; sourceTree = "<group>"; };
 		DB14A65418C8229A00F1D5BF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DB14A65A18C8229A00F1D5BF /* TJLProgressViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TJLProgressViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB14A65B18C8229A00F1D5BF /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		DB14A66318C8229A00F1D5BF /* TJLProgressViewTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TJLProgressViewTests-Info.plist"; sourceTree = "<group>"; };
 		DB14A66518C8229A00F1D5BF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DB14A66718C8229A00F1D5BF /* TJLProgressViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TJLProgressViewTests.m; sourceTree = "<group>"; };
-		DB14A67418C8232D00F1D5BF /* TJLProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TJLProgressView.h; path = Source/TJLProgressView.h; sourceTree = "<group>"; };
-		DB14A67518C8232D00F1D5BF /* TJLProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TJLProgressView.m; path = Source/TJLProgressView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +82,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7426C360BC22F71DC2609BB2 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				7426C5BC4C2402224E5FDA3B /* TJLProgressView.h */,
+				7426C46623F341D2CF3464E6 /* TJLProgressView.m */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		7426C3E631A02E8271727D13 /* Root VC */ = {
+			isa = PBXGroup;
+			children = (
+				7426CDC4BBB204FC4C17032B /* TJLViewController.h */,
+				7426C0CCEC67E7E3EA7E94A8 /* TJLViewController.m */,
+			);
+			name = "Root VC";
+			sourceTree = "<group>";
+		};
+		7426CD4449A367031028CBDA /* App Delegate & Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				7426CBBE00E77BF34F816897 /* TJLAppDelegate.m */,
+				7426C113502F157435EE1C96 /* TJLAppDelegate.h */,
+				7426CE416F61023BFBD0323E /* Main.storyboard */,
+			);
+			name = "App Delegate & Storyboard";
+			sourceTree = "<group>";
+		};
 		DB14A63018C8229A00F1D5BF = {
 			isa = PBXGroup;
 			children = (
@@ -115,15 +143,11 @@
 		DB14A64218C8229A00F1D5BF /* TJLProgressView */ = {
 			isa = PBXGroup;
 			children = (
-				DB14A64B18C8229A00F1D5BF /* TJLAppDelegate.h */,
-				DB14A64C18C8229A00F1D5BF /* TJLAppDelegate.m */,
-				DB14A64E18C8229A00F1D5BF /* Main.storyboard */,
-				DB14A65118C8229A00F1D5BF /* TJLViewController.h */,
-				DB14A65218C8229A00F1D5BF /* TJLViewController.m */,
 				DB14A65418C8229A00F1D5BF /* Images.xcassets */,
 				DB14A64318C8229A00F1D5BF /* Supporting Files */,
-				DB14A67418C8232D00F1D5BF /* TJLProgressView.h */,
-				DB14A67518C8232D00F1D5BF /* TJLProgressView.m */,
+				7426C360BC22F71DC2609BB2 /* Source */,
+				7426CD4449A367031028CBDA /* App Delegate & Storyboard */,
+				7426C3E631A02E8271727D13 /* Root VC */,
 			);
 			path = TJLProgressView;
 			sourceTree = "<group>";
@@ -236,7 +260,7 @@
 			files = (
 				DB14A65518C8229A00F1D5BF /* Images.xcassets in Resources */,
 				DB14A64718C8229A00F1D5BF /* InfoPlist.strings in Resources */,
-				DB14A65018C8229A00F1D5BF /* Main.storyboard in Resources */,
+				7426C77F7D20C8F867AFE11C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,10 +279,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB14A65318C8229A00F1D5BF /* TJLViewController.m in Sources */,
 				DB14A64918C8229A00F1D5BF /* main.m in Sources */,
-				DB14A67618C8232D00F1D5BF /* TJLProgressView.m in Sources */,
-				DB14A64D18C8229A00F1D5BF /* TJLAppDelegate.m in Sources */,
+				7426C706635A31F1CC8BE803 /* TJLProgressView.m in Sources */,
+				7426CAABBABCAF2FCB160A2A /* TJLAppDelegate.m in Sources */,
+				7426CFDABB9E9D08B853858B /* TJLViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,20 +305,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		7426CE416F61023BFBD0323E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7426C24DB8284AEFDE922D2E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
 		DB14A64518C8229A00F1D5BF /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				DB14A64618C8229A00F1D5BF /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		DB14A64E18C8229A00F1D5BF /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DB14A64F18C8229A00F1D5BF /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		DB14A66418C8229A00F1D5BF /* InfoPlist.strings */ = {

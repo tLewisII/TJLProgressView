@@ -83,12 +83,14 @@ void *observerContext = &observerContext;
                 [self setNeedsLayout];
             }];
         }
-        else {
-            [UIView animateWithDuration:.227 animations:^{
+        if(fractionComplete == 1) {
+            [UIView animateWithDuration:.227 delay:.227 options:UIViewAnimationOptionCurveLinear animations:^{
                 self.alpha = 0;
-            }                completion:^(BOOL done) {
-                [self removeObserver:self forKeyPath:@"progress.fractionCompleted"];
-                [self removeFromSuperview];
+            }                completion:^(BOOL finished) {
+                if(finished) {
+                    [self removeObserver:self forKeyPath:@"progress.fractionCompleted"];
+                    [self removeFromSuperview];
+                }
             }];
         }
     }
