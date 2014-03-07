@@ -30,7 +30,7 @@ void *observerContext = &observerContext;
     return self;
 }
 
-- (void)showInNavigationBar:(UINavigationController *)controller {
+- (void)showFromNavigationBar:(UINavigationController *)controller {
     self.controller = controller;
     self.translatesAutoresizingMaskIntoConstraints = NO;
     [self.controller.view addSubview:self];
