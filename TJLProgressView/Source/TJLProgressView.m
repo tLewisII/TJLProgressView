@@ -7,37 +7,80 @@
 //
 
 #import "TJLProgressView.h"
-@interface TJLProgressView()
+
+void *observerContext = &observerContext;
+
+@interface TJLProgressView ()
 @property(strong, nonatomic) UINavigationController *controller;
 @property(strong, nonatomic) NSProgress *progress;
+@property(strong, nonatomic) NSLayoutConstraint *width;
 @end
+
 @implementation TJLProgressView
 
-- (instancetype)initWithProgress:(NSProgress *)progress {
+- (instancetype)initWithProgress:(NSProgress *)progress color:(UIColor *)color {
     self = [super initWithFrame:CGRectZero];
-    if (!self) {
+    if(!self) {
         return nil;
     }
-    
+
     _progress = progress;
-    [self addObserver:self forKeyPath:@"progress.fractionCompleted" options:NSKeyValueObservingOptionNew context:NULL];
-    self.backgroundColor = [UIColor redColor];
+    [self addObserver:self forKeyPath:@"progress.fractionCompleted" options:NSKeyValueObservingOptionNew context:observerContext];
+    self.backgroundColor = color;
     return self;
 }
 
 - (void)showInNavigationBar:(UINavigationController *)controller {
     self.controller = controller;
-    self.frame = (CGRect){.origin.x = 0, .origin.y = CGRectGetMaxY(self.controller.navigationBar.frame) + 1, .size.width = 0, .size.height = 0};
+    self.translatesAutoresizingMaskIntoConstraints = NO;
     [self.controller.view addSubview:self];
+    [self.controller.view addConstraints:@[
+            [NSLayoutConstraint
+                    constraintWithItem:self
+                             attribute:NSLayoutAttributeTop
+                             relatedBy:NSLayoutRelationEqual
+                                toItem:self.controller.navigationBar
+                             attribute:NSLayoutAttributeBottom
+                            multiplier:1.0
+                              constant:1],
+            [NSLayoutConstraint
+                    constraintWithItem:self
+                             attribute:NSLayoutAttributeLeading
+                             relatedBy:NSLayoutRelationEqual
+                                toItem:self.controller.navigationBar
+                             attribute:NSLayoutAttributeLeading
+                            multiplier:1.0
+                              constant:0],
+            self.width = [NSLayoutConstraint
+                    constraintWithItem:self
+                             attribute:NSLayoutAttributeWidth
+                             relatedBy:NSLayoutRelationEqual
+                                toItem:nil
+                             attribute:NSLayoutAttributeNotAnAttribute
+                            multiplier:1.0
+                              constant:0],
+            [NSLayoutConstraint
+                    constraintWithItem:self
+                             attribute:NSLayoutAttributeHeight
+                             relatedBy:NSLayoutRelationEqual
+                                toItem:nil
+                             attribute:NSLayoutAttributeNotAnAttribute
+                            multiplier:1.0
+                              constant:2],
+    ]];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-    NSNumber *num = change[NSKeyValueChangeNewKey];
-    CGFloat progress = num.floatValue;
-    CGFloat width = CGRectGetWidth(self.controller.view.frame);
-    CGFloat prog = (width * progress);
-    [UIView animateWithDuration:.227 animations:^{
-        self.frame = (CGRect){.origin.x = 0, .origin.y = CGRectGetMaxY(self.controller.navigationBar.frame) + 1, .size.width = prog, .size.height = 1};
-    }];
+    if(observerContext == context) {
+        NSNumber *num = change[NSKeyValueChangeNewKey];
+        CGFloat progress = num.floatValue;
+        CGFloat width = CGRectGetWidth(self.controller.view.frame);
+        CGFloat prog = (width * progress);
+        self.width.constant = prog;
+        [UIView animateWithDuration:.227 animations:^{
+            [self setNeedsLayout];
+        }];
+    }
 }
+
 @end

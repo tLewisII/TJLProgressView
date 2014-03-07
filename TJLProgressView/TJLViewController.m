@@ -21,7 +21,7 @@
     [super viewDidLoad];
 	self.progress = [NSProgress progressWithTotalUnitCount:10];
     self.count = 0;
-    self.progView = [[TJLProgressView alloc]initWithProgress:self.progress];
+    self.progView = [[TJLProgressView alloc] initWithProgress:self.progress color:[UIColor blueColor]];
     [self.progView showInNavigationBar:self.navigationController];
         
     [[NSRunLoop mainRunLoop]addTimer:[NSTimer timerWithTimeInterval:.5 target:self selector:@selector(incrementProgress:) userInfo:nil repeats:YES] forMode:NSDefaultRunLoopMode];

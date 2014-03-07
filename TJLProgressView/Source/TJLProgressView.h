@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface TJLProgressView : UIView
-- (instancetype)initWithProgress:(NSProgress *)progress;
+
+- (instancetype)initWithProgress:(NSProgress *)progress color:(UIColor *)color;
 
 - (void)showInNavigationBar:(UINavigationController *)controller;
 @end
