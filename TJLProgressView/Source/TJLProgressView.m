@@ -11,7 +11,6 @@
 void *observerContext = &observerContext;
 
 @interface TJLProgressView ()
-@property(strong, nonatomic) UINavigationController *controller;
 @property(strong, nonatomic) NSProgress *progressIndicator;
 @end
 
@@ -29,24 +28,23 @@ void *observerContext = &observerContext;
     return self;
 }
 
-- (void)showFromNavigationBar:(UINavigationController *)controller {
-    self.controller = controller;
+- (void)showFromBottomOfNavigationController:(UINavigationController *)controller {
     self.translatesAutoresizingMaskIntoConstraints = NO;
-    [self.controller.view addSubview:self];
-    [self.controller.view addConstraints:@[
+    [controller.view addSubview:self];
+    [controller.view addConstraints:@[
             [NSLayoutConstraint
                     constraintWithItem:self
                              attribute:NSLayoutAttributeTop
                              relatedBy:NSLayoutRelationEqual
-                                toItem:self.controller.navigationBar
+                                toItem:controller.navigationBar
                              attribute:NSLayoutAttributeBottom
                             multiplier:1.0
-                              constant:1],
+                              constant:0],
             [NSLayoutConstraint
                     constraintWithItem:self
                              attribute:NSLayoutAttributeLeading
                              relatedBy:NSLayoutRelationEqual
-                                toItem:self.controller.navigationBar
+                                toItem:controller.navigationBar
                              attribute:NSLayoutAttributeLeading
                             multiplier:1.0
                               constant:0],
@@ -54,23 +52,15 @@ void *observerContext = &observerContext;
                     constraintWithItem:self
                              attribute:NSLayoutAttributeWidth
                              relatedBy:NSLayoutRelationEqual
-                                toItem:self.controller.navigationBar
+                                toItem:controller.navigationBar
                              attribute:NSLayoutAttributeWidth
                             multiplier:1.0
-                              constant:0],
-            [NSLayoutConstraint
-                    constraintWithItem:self
-                             attribute:NSLayoutAttributeHeight
-                             relatedBy:NSLayoutRelationEqual
-                                toItem:nil
-                             attribute:NSLayoutAttributeNotAnAttribute
-                            multiplier:1.0
-                              constant:2],
+                              constant:0]
     ]];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-    if(observerContext == context && object == self.progressIndicator) {
+    if(observerContext == context) {
         NSNumber *num = change[NSKeyValueChangeNewKey];
         CGFloat fractionComplete = num.floatValue;
 

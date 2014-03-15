@@ -29,6 +29,6 @@
 *
 * @param controller The navigation controller to show the view in.
 */
-- (void)showFromNavigationBar:(UINavigationController *)controller;
+- (void)showFromBottomOfNavigationController:(UINavigationController *)controller;
 
 @end
