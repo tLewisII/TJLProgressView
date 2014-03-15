@@ -93,9 +93,10 @@ void *observerContext = &observerContext;
 
 - (void)showVerticallyOnLeftSideOfView:(UIView *)parent havingNavigationBar:(BOOL)havingNavBar {
     [parent addSubview:self];
-    CGFloat widthOffset = havingNavBar ? 44 : 0;
-    CGFloat yOffset = havingNavBar ? 44 : 0;
-    CGFloat xOffset = havingNavBar ? 11 : 0;
+
+    CGFloat widthOffset = 44;
+    CGFloat yOffset = 44;
+    CGFloat xOffset = 11;
     self.frame = (CGRect){
             .origin.x = CGRectGetWidth(parent.bounds) - CGRectGetHeight(parent.bounds) - xOffset,
             .origin.y = CGRectGetMidY(parent.bounds) + yOffset,
@@ -108,13 +109,14 @@ void *observerContext = &observerContext;
 
 - (void)showVerticallyOnRightSideOfView:(UIView *)parent havingNavigationBar:(BOOL)havingNavBar {
     [parent addSubview:self];
-    CGFloat widthOffset = havingNavBar ? 44 : 0;
-    CGFloat yOffset = havingNavBar ? 44 : 0;
-    CGFloat xOffset = havingNavBar ? 11 : 0;
+
+    CGFloat widthOffset = 44;
+    CGFloat yOffset = 44;
+    CGFloat xOffset = 56;
     self.frame = (CGRect){
             .origin.x = xOffset,
             .origin.y = CGRectGetMidY(parent.bounds) + yOffset,
-            .size.width = CGRectGetHeight(parent.bounds) + widthOffset,
+            .size.width = CGRectGetHeight(parent.bounds) - widthOffset,
             .size.height = 0
     };
 
