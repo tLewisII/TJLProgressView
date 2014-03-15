@@ -40,7 +40,7 @@ void *observerContext = &observerContext;
                                 toItem:controller.navigationBar
                              attribute:NSLayoutAttributeBottom
                             multiplier:1.0
-                              constant:CGRectGetHeight(self.bounds)],
+                              constant:0],
             [NSLayoutConstraint
                     constraintWithItem:self
                              attribute:NSLayoutAttributeLeading
@@ -71,7 +71,7 @@ void *observerContext = &observerContext;
                                 toItem:parent
                              attribute:NSLayoutAttributeBottom
                             multiplier:1.0
-                              constant:-CGRectGetHeight(self.bounds)],
+                              constant:0],
             [NSLayoutConstraint
                     constraintWithItem:self
                              attribute:NSLayoutAttributeLeading
@@ -99,13 +99,28 @@ void *observerContext = &observerContext;
     self.frame = (CGRect){
             .origin.x = CGRectGetWidth(parent.bounds) - CGRectGetHeight(parent.bounds) - xOffset,
             .origin.y = CGRectGetMidY(parent.bounds) + yOffset,
-            .size.width = CGRectGetHeight(parent.bounds) + widthOffset,
+            .size.width = CGRectGetHeight(parent.bounds) - widthOffset,
             .size.height = 0
     };
 
     self.transform = CGAffineTransformMakeRotation((CGFloat)tjl_degToRadians(-90));
 }
 
+- (void)showVerticallyOnRightSideOfView:(UIView *)parent havingNavigationBar:(BOOL)havingNavBar {
+    [parent addSubview:self];
+    CGFloat widthOffset = havingNavBar ? 44 : 0;
+    CGFloat yOffset = havingNavBar ? 44 : 0;
+    CGFloat xOffset = havingNavBar ? 11 : 0;
+    self.frame = (CGRect){
+            .origin.x = xOffset,
+            .origin.y = CGRectGetMidY(parent.bounds) + yOffset,
+            .size.width = CGRectGetHeight(parent.bounds) + widthOffset,
+            .size.height = 0
+    };
+
+    self.transform = CGAffineTransformMakeRotation((CGFloat)tjl_degToRadians(-90));
+
+}
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     if(observerContext == context) {

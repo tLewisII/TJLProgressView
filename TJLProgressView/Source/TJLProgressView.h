@@ -39,7 +39,8 @@
 - (void)__attribute__((nonnull(1))) showFromBottomOfView:(UIView *)parent;
 
 /**
-* Shows the progress view vertically on the left side of the given view.
+* Shows the progress view vertically on the left side of the given view,
+* with the progress going from the bottom to the top of the view.
 *
 * @param parent The view to show the progress in.
 * @param havingNavBar If the parent view has a navbar, such as a navigation controller.
@@ -47,4 +48,13 @@
 */
 - (void)__attribute__((nonnull(1))) showVerticallyOnLeftSideOfView:(UIView *)parent havingNavigationBar:(BOOL)havingNavBar;
 
+/**
+* Shows the progress view vertically on the right side of the given view,
+* with the progress going from the bottom to the top of the view.
+*
+* @param parent The view to show the progress in.
+* @param havingNavBar If the parent view has a navbar, such as a navigation controller.
+* Used to calculate correct positioning for rotating the view.
+*/
+- (void)__attribute__((nonnull(1))) showVerticallyOnRightSideOfView:(UIView *)parent havingNavigationBar:(BOOL)havingNavBar;
 @end
