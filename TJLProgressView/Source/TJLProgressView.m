@@ -8,6 +8,7 @@
 
 #import "TJLProgressView.h"
 
+#define tjl_degToRadians(x) (x * M_PI / 180.0f)
 void *observerContext = &observerContext;
 
 @interface TJLProgressView ()
@@ -67,7 +68,8 @@ void *observerContext = &observerContext;
                     constraintWithItem:self
                              attribute:NSLayoutAttributeBottom
                              relatedBy:NSLayoutRelationEqual
-                                toItem:parent attribute:NSLayoutAttributeBottom
+                                toItem:parent
+                             attribute:NSLayoutAttributeBottom
                             multiplier:1.0
                               constant:-CGRectGetHeight(self.bounds)],
             [NSLayoutConstraint
@@ -87,6 +89,21 @@ void *observerContext = &observerContext;
                             multiplier:1.0
                               constant:0]
     ]];
+}
+
+- (void)showVerticallyOnLeftSideOfView:(UIView *)parent havingNavigationBar:(BOOL)havingNavBar {
+    [parent addSubview:self];
+    CGFloat widthOffset = havingNavBar ? 44 : 0;
+    CGFloat yOffset = havingNavBar ? 44 : 0;
+    CGFloat xOffset = havingNavBar ? 11 : 0;
+    self.frame = (CGRect){
+            .origin.x = CGRectGetWidth(parent.bounds) - CGRectGetHeight(parent.bounds) - xOffset,
+            .origin.y = CGRectGetMidY(parent.bounds) + yOffset,
+            .size.width = CGRectGetHeight(parent.bounds) + widthOffset,
+            .size.height = 0
+    };
+
+    self.transform = CGAffineTransformMakeRotation((CGFloat)tjl_degToRadians(-90));
 }
 
 

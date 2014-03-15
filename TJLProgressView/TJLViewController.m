@@ -18,15 +18,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-	self.progressIndicator = [NSProgress progressWithTotalUnitCount:20];
+    self.progressIndicator = [NSProgress progressWithTotalUnitCount:10];
     self.count = 0;
-    TJLProgressView *progressView = [[TJLProgressView alloc] initWithProgress:self.progressIndicator progressViewStyle:UIProgressViewStyleBar];
-    [progressView showFromBottomOfNavigationController:self.navigationController];
-        TJLProgressView *bottomProgress = [[TJLProgressView alloc] initWithProgress:self.progressIndicator progressViewStyle:UIProgressViewStyleBar];
-    [bottomProgress showFromBottomOfView:self.view];
-    [[NSRunLoop mainRunLoop]addTimer:[NSTimer timerWithTimeInterval:.5 target:self selector:@selector(incrementProgress:) userInfo:nil repeats:YES] forMode:NSDefaultRunLoopMode];
+    TJLProgressView *navBarProgress = [[TJLProgressView alloc] initWithProgress:self.progressIndicator progressViewStyle:UIProgressViewStyleDefault];
+    [navBarProgress showFromBottomOfNavigationController:self.navigationController];
 
+    TJLProgressView *leftSideProgress = [[TJLProgressView alloc] initWithProgress:self.progressIndicator progressViewStyle:UIProgressViewStyleDefault];
+    [leftSideProgress showVerticallyOnLeftSideOfView:self.view havingNavigationBar:YES];
+
+    TJLProgressView *bottomProgress = [[TJLProgressView alloc] initWithProgress:self.progressIndicator progressViewStyle:UIProgressViewStyleDefault];
+    [bottomProgress showFromBottomOfView:self.view];
+    [[NSRunLoop mainRunLoop] addTimer:[NSTimer timerWithTimeInterval:.5 target:self selector:@selector(incrementProgress:) userInfo:nil repeats:YES] forMode:NSDefaultRunLoopMode];
 }
+
 - (IBAction)incrementProgress:(id)sender {
     [self.progressIndicator setCompletedUnitCount:++self.count];
 }
