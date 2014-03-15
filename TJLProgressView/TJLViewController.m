@@ -10,25 +10,24 @@
 #import "TJLProgressView.h"
 
 @interface TJLViewController ()
-@property(strong, nonatomic) NSProgress *progress;
+@property(strong, nonatomic) NSProgress *progressIndicator;
 @property(nonatomic) NSUInteger count;
-@property(strong, nonatomic) TJLProgressView *progView;
 @end
 
 @implementation TJLViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-	self.progress = [NSProgress progressWithTotalUnitCount:10];
+	self.progressIndicator = [NSProgress progressWithTotalUnitCount:20];
     self.count = 0;
-    self.progView = [[TJLProgressView alloc] initWithProgress:self.progress color:[UIColor blueColor]];
-    [self.progView showFromNavigationBar:self.navigationController];
+    TJLProgressView *progressView = [[TJLProgressView alloc] initWithProgress:self.progressIndicator progressViewStyle:UIProgressViewStyleDefault];
+    [progressView showFromNavigationBar:self.navigationController];
         
     [[NSRunLoop mainRunLoop]addTimer:[NSTimer timerWithTimeInterval:.5 target:self selector:@selector(incrementProgress:) userInfo:nil repeats:YES] forMode:NSDefaultRunLoopMode];
 
 }
 - (IBAction)incrementProgress:(id)sender {
-    [self.progress setCompletedUnitCount:++self.count];
+    [self.progressIndicator setCompletedUnitCount:++self.count];
 }
 
 @end

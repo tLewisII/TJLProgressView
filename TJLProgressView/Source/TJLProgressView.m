@@ -12,21 +12,20 @@ void *observerContext = &observerContext;
 
 @interface TJLProgressView ()
 @property(strong, nonatomic) UINavigationController *controller;
-@property(strong, nonatomic) NSProgress *progress;
-@property(strong, nonatomic) NSLayoutConstraint *width;
+@property(strong, nonatomic) NSProgress *progressIndicator;
 @end
 
 @implementation TJLProgressView
 
-- (instancetype)initWithProgress:(NSProgress *)progress color:(UIColor *)color {
-    self = [super initWithFrame:CGRectZero];
+- (instancetype)initWithProgress:(NSProgress *)progress progressViewStyle:(UIProgressViewStyle)style {
+    self = [super initWithProgressViewStyle:style];
     if(!self) {
         return nil;
     }
 
-    _progress = progress;
-    [self addObserver:self forKeyPath:@"progress.fractionCompleted" options:NSKeyValueObservingOptionNew context:observerContext];
-    self.backgroundColor = color;
+    _progressIndicator = progress;
+    [self addObserver:self forKeyPath:@"progressIndicator.fractionCompleted" options:NSKeyValueObservingOptionNew context:observerContext];
+
     return self;
 }
 
@@ -51,12 +50,12 @@ void *observerContext = &observerContext;
                              attribute:NSLayoutAttributeLeading
                             multiplier:1.0
                               constant:0],
-            self.width = [NSLayoutConstraint
+            [NSLayoutConstraint
                     constraintWithItem:self
                              attribute:NSLayoutAttributeWidth
                              relatedBy:NSLayoutRelationEqual
-                                toItem:nil
-                             attribute:NSLayoutAttributeNotAnAttribute
+                                toItem:self.controller.navigationBar
+                             attribute:NSLayoutAttributeWidth
                             multiplier:1.0
                               constant:0],
             [NSLayoutConstraint
@@ -71,24 +70,19 @@ void *observerContext = &observerContext;
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-    if(observerContext == context) {
+    if(observerContext == context && object == self.progressIndicator) {
         NSNumber *num = change[NSKeyValueChangeNewKey];
         CGFloat fractionComplete = num.floatValue;
-        CGFloat width = CGRectGetWidth(self.controller.view.bounds);
-        CGFloat newWidth = (width * fractionComplete);
 
         if(fractionComplete <= 1) {
-            self.width.constant = newWidth;
-            [UIView animateWithDuration:.227 animations:^{
-                [self setNeedsLayout];
-            }];
+            [self setProgress:fractionComplete animated:YES];
         }
         if(fractionComplete == 1) {
             [UIView animateWithDuration:.227 delay:.227 options:UIViewAnimationOptionCurveLinear animations:^{
                 self.alpha = 0;
             }                completion:^(BOOL finished) {
                 if(finished) {
-                    [self removeObserver:self forKeyPath:@"progress.fractionCompleted"];
+                    [self removeObserver:self forKeyPath:@"progressIndicator.fractionCompleted"];
                     [self removeFromSuperview];
                 }
             }];

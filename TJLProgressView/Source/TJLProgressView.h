@@ -8,23 +8,23 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TJLProgressView : UIView
+@interface TJLProgressView : UIProgressView
 
 /**
-* Initializes the view with an NSProgress object that will be observed in order
-* to update the view and a background color for the view.
+* Initializes the UIProgressView with an NSProgress object that will be observed in order
+* to update the progress and a style for for the view.
 *
-* @param progress An NSProgress object that you update in order to update the
+* @param progressIndicator An NSProgress object that you update in order to update the
 * visible progress of the view. You use the NSProgress object like you normally would,
 * and the view will observe the fractionComplete key-path in order to update itself.
-* @param color The color you wish to use for the view.
+* @param style The style of the progress view.
 * @return An instance of the class that can either be added manually to another view
 * or added with one of the `-showFrom..` convenience methods provided.
 */
-- (instancetype)initWithProgress:(NSProgress *)progress color:(UIColor *)color;
+- (instancetype)initWithProgress:(NSProgress *)progress progressViewStyle:(UIProgressViewStyle)style;
 
 /**
-* Shows the progress view just below the navigation bar, much like progress is show
+* Shows the progress view just below the navigation bar, much like progress is shown
 * in safari.
 *
 * @param controller The navigation controller to show the view in.
