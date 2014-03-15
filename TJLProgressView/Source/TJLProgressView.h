@@ -21,14 +21,21 @@
 * @return An instance of the class that can either be added manually to another view
 * or added with one of the `-showFrom..` convenience methods provided.
 */
-- (instancetype)initWithProgress:(NSProgress *)progress progressViewStyle:(UIProgressViewStyle)style;
+- (instancetype)__attribute__((nonnull(1))) initWithProgress:(NSProgress *)progress progressViewStyle:(UIProgressViewStyle)style;
 
 /**
 * Shows the progress view just below the navigation bar, much like progress is shown
 * in safari.
 *
-* @param controller The navigation controller to show the view in.
+* @param controller The navigation controller to show the progress in.
 */
-- (void)showFromBottomOfNavigationController:(UINavigationController *)controller;
+- (void)__attribute__((nonnull(1))) showFromBottomOfNavigationController:(UINavigationController *)controller;
+
+/**
+* Shows the progress view at the bottom of the given view.
+*
+* @param parent The view to show the progress in.
+*/
+- (void)__attribute__((nonnull(1))) showFromBottomOfView:(UIView *)parent;
 
 @end

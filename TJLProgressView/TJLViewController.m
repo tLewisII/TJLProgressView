@@ -22,7 +22,8 @@
     self.count = 0;
     TJLProgressView *progressView = [[TJLProgressView alloc] initWithProgress:self.progressIndicator progressViewStyle:UIProgressViewStyleBar];
     [progressView showFromBottomOfNavigationController:self.navigationController];
-        
+        TJLProgressView *bottomProgress = [[TJLProgressView alloc] initWithProgress:self.progressIndicator progressViewStyle:UIProgressViewStyleBar];
+    [bottomProgress showFromBottomOfView:self.view];
     [[NSRunLoop mainRunLoop]addTimer:[NSTimer timerWithTimeInterval:.5 target:self selector:@selector(incrementProgress:) userInfo:nil repeats:YES] forMode:NSDefaultRunLoopMode];
 
 }

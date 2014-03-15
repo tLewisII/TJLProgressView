@@ -39,7 +39,7 @@ void *observerContext = &observerContext;
                                 toItem:controller.navigationBar
                              attribute:NSLayoutAttributeBottom
                             multiplier:1.0
-                              constant:0],
+                              constant:CGRectGetHeight(self.bounds)],
             [NSLayoutConstraint
                     constraintWithItem:self
                              attribute:NSLayoutAttributeLeading
@@ -58,6 +58,37 @@ void *observerContext = &observerContext;
                               constant:0]
     ]];
 }
+
+- (void)showFromBottomOfView:(UIView *)parent {
+    self.translatesAutoresizingMaskIntoConstraints = NO;
+    [parent addSubview:self];
+    [parent addConstraints:@[
+            [NSLayoutConstraint
+                    constraintWithItem:self
+                             attribute:NSLayoutAttributeBottom
+                             relatedBy:NSLayoutRelationEqual
+                                toItem:parent attribute:NSLayoutAttributeBottom
+                            multiplier:1.0
+                              constant:-CGRectGetHeight(self.bounds)],
+            [NSLayoutConstraint
+                    constraintWithItem:self
+                             attribute:NSLayoutAttributeLeading
+                             relatedBy:NSLayoutRelationEqual
+                                toItem:parent
+                             attribute:NSLayoutAttributeLeading
+                            multiplier:1.0
+                              constant:0],
+            [NSLayoutConstraint
+                    constraintWithItem:self
+                             attribute:NSLayoutAttributeWidth
+                             relatedBy:NSLayoutRelationEqual
+                                toItem:parent
+                             attribute:NSLayoutAttributeWidth
+                            multiplier:1.0
+                              constant:0]
+    ]];
+}
+
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     if(observerContext == context) {
