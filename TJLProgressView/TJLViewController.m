@@ -33,10 +33,13 @@
     TJLProgressView *rightProgress = [[TJLProgressView alloc] initWithProgress:self.progressIndicator progressViewStyle:UIProgressViewStyleBar];
     [rightProgress showVerticallyOnRightSideOfView:self.view havingNavigationBar:YES];
 
+}
+
+- (IBAction)startTimer:(id)sender {
     [[NSRunLoop mainRunLoop] addTimer:[NSTimer timerWithTimeInterval:.5 target:self selector:@selector(incrementProgress:) userInfo:nil repeats:YES] forMode:NSDefaultRunLoopMode];
 }
 
-- (IBAction)incrementProgress:(id)sender {
+- (void)incrementProgress:(NSTimer *)incrementProgress {
     [self.progressIndicator setCompletedUnitCount:++self.count];
 }
 
