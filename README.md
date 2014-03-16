@@ -1,6 +1,6 @@
 TJLProgressView
 ===========
-A subclass of UIProgressView that takes a NSProgress which it monitors and updates automatically. Also can be show vertically rather than just horizontally. Will be automatically removed when progress is complete.
+A subclass of UIProgressView that takes a NSProgress which it monitors and updates automatically. Also can be show vertically rather than just horizontally. Will be automatically be removed from the parent view when progress is complete.
 
 
 ![gif](https://github.com/tLewisII/TJLProgressView/raw/master/Screenshots/TJLProgressView.gif)
