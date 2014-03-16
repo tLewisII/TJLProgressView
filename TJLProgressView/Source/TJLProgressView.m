@@ -8,7 +8,8 @@
 
 #import "TJLProgressView.h"
 
-#define tjl_degToRadians(x) (x * M_PI / 180.0f)
+#define tjl_degToRadians(x) ((x)/180.0*M_PI)
+
 void *observerContext = &observerContext;
 
 @interface TJLProgressView ()
@@ -40,7 +41,7 @@ void *observerContext = &observerContext;
                                 toItem:controller.navigationBar
                              attribute:NSLayoutAttributeBottom
                             multiplier:1.0
-                              constant:0],
+                              constant:1],
             [NSLayoutConstraint
                     constraintWithItem:self
                              attribute:NSLayoutAttributeLeading
@@ -71,7 +72,7 @@ void *observerContext = &observerContext;
                                 toItem:parent
                              attribute:NSLayoutAttributeBottom
                             multiplier:1.0
-                              constant:0],
+                              constant:-1],
             [NSLayoutConstraint
                     constraintWithItem:self
                              attribute:NSLayoutAttributeLeading
@@ -94,12 +95,11 @@ void *observerContext = &observerContext;
 - (void)showVerticallyOnLeftSideOfView:(UIView *)parent havingNavigationBar:(BOOL)havingNavBar {
     [parent addSubview:self];
 
-    CGFloat widthOffset = 44;
-    CGFloat yOffset = 44;
-    CGFloat xOffset = 11;
+    CGFloat widthOffset = havingNavBar ? 64 : 0;
+    self.layer.anchorPoint = CGPointMake(0.0f, 0.5f);
     self.frame = (CGRect){
-            .origin.x = CGRectGetWidth(parent.bounds) - CGRectGetHeight(parent.bounds) - xOffset,
-            .origin.y = CGRectGetMidY(parent.bounds) + yOffset,
+            .origin.x = 2,
+            .origin.y = CGRectGetMaxY(parent.bounds) - 1,
             .size.width = CGRectGetHeight(parent.bounds) - widthOffset,
             .size.height = 0
     };
@@ -110,18 +110,16 @@ void *observerContext = &observerContext;
 - (void)showVerticallyOnRightSideOfView:(UIView *)parent havingNavigationBar:(BOOL)havingNavBar {
     [parent addSubview:self];
 
-    CGFloat widthOffset = 44;
-    CGFloat yOffset = 44;
-    CGFloat xOffset = 56;
+    CGFloat widthOffset = havingNavBar ? 64 : 0;
+    self.layer.anchorPoint = CGPointMake(0.0f, 0.5f);
     self.frame = (CGRect){
-            .origin.x = xOffset,
-            .origin.y = CGRectGetMidY(parent.bounds) + yOffset,
+            .origin.x = CGRectGetMaxX(parent.frame) - 2,
+            .origin.y = CGRectGetMaxY(parent.bounds) - 1,
             .size.width = CGRectGetHeight(parent.bounds) - widthOffset,
             .size.height = 0
     };
 
     self.transform = CGAffineTransformMakeRotation((CGFloat)tjl_degToRadians(-90));
-
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {

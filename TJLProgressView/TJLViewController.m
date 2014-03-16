@@ -25,13 +25,13 @@
     [navBarProgress showFromBottomOfNavigationController:self.navigationController];
 
     TJLProgressView *leftSideProgress = [[TJLProgressView alloc] initWithProgress:self.progressIndicator progressViewStyle:UIProgressViewStyleBar];
-    [leftSideProgress showVerticallyOnLeftSideOfView:self.view havingNavigationBar:NO];
+    [leftSideProgress showVerticallyOnLeftSideOfView:self.view havingNavigationBar:YES];
 
     TJLProgressView *bottomProgress = [[TJLProgressView alloc] initWithProgress:self.progressIndicator progressViewStyle:UIProgressViewStyleBar];
     [bottomProgress showFromBottomOfView:self.view];
 
     TJLProgressView *rightProgress = [[TJLProgressView alloc] initWithProgress:self.progressIndicator progressViewStyle:UIProgressViewStyleBar];
-    [rightProgress showVerticallyOnRightSideOfView:self.view havingNavigationBar:NO];
+    [rightProgress showVerticallyOnRightSideOfView:self.view havingNavigationBar:YES];
 
     [[NSRunLoop mainRunLoop] addTimer:[NSTimer timerWithTimeInterval:.5 target:self selector:@selector(incrementProgress:) userInfo:nil repeats:YES] forMode:NSDefaultRunLoopMode];
 }
