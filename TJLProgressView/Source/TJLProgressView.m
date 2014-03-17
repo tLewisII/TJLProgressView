@@ -13,7 +13,7 @@
 void *observerContext = &observerContext;
 
 @interface TJLProgressView ()
-
+@property(strong, nonatomic) NSProgress *progressIndicator;
 @end
 
 @implementation TJLProgressView
@@ -24,7 +24,8 @@ void *observerContext = &observerContext;
         return nil;
     }
 
-    [progress addObserver:self forKeyPath:@"fractionCompleted" options:NSKeyValueObservingOptionNew context:observerContext];
+    _progressIndicator = progress;
+    [_progressIndicator addObserver:self forKeyPath:@"fractionCompleted" options:NSKeyValueObservingOptionNew context:observerContext];
 
     return self;
 }
@@ -123,7 +124,6 @@ void *observerContext = &observerContext;
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     if(observerContext == context) {
-        NSProgress *currentProgress = (NSProgress *)object;
         NSNumber *num = change[NSKeyValueChangeNewKey];
         CGFloat fractionComplete = num.floatValue;
 
@@ -135,7 +135,6 @@ void *observerContext = &observerContext;
                 self.alpha = 0;
             }                completion:^(BOOL finished) {
                 if(finished) {
-                    [currentProgress removeObserver:self forKeyPath:@"fractionCompleted"];
                     [self removeFromSuperview];
                 }
             }];
@@ -143,4 +142,7 @@ void *observerContext = &observerContext;
     }
 }
 
+- (void)dealloc {
+    [self.progressIndicator removeObserver:self forKeyPath:@"fractionCompleted"];
+}
 @end
