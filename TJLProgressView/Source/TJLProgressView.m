@@ -126,23 +126,23 @@ void *observerContext = &observerContext;
     if(observerContext == context) {
         NSNumber *num = change[NSKeyValueChangeNewKey];
         CGFloat fractionComplete = num.floatValue;
-
-        if(fractionComplete <= 1) {
-            [self setProgress:fractionComplete animated:YES];
-        }
-        if(fractionComplete == 1) {
-            [UIView animateWithDuration:.227 delay:.227 options:UIViewAnimationOptionCurveLinear animations:^{
-                self.alpha = 0;
-            }                completion:^(BOOL finished) {
-                if(finished) {
-                    [self removeFromSuperview];
-                }
-            }];
-        }
+        
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            if(fractionComplete <= 1) {
+                [self setProgress:fractionComplete animated:YES];
+            }
+            if(fractionComplete == 1) {
+                [UIView animateWithDuration:.227 delay:.227 options:UIViewAnimationOptionCurveLinear animations:^{
+                    self.alpha = 0;
+                }                completion:^(BOOL finished) {
+                    if(finished) {
+                        [self.progressIndicator removeObserver:self forKeyPath:@"fractionCompleted"];
+                        [self removeFromSuperview];
+                    }
+                }];
+            }
+        }];
     }
 }
 
-- (void)dealloc {
-    [self.progressIndicator removeObserver:self forKeyPath:@"fractionCompleted"];
-}
 @end
