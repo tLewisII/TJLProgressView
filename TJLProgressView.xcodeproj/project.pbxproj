@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17BB8F391B1CC54A008A37C5 /* TJLProgressViewFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 17BB8F381B1CC54A008A37C5 /* TJLProgressViewFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		17BB8F4B1B1CC54A008A37C5 /* TJLProgressViewFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17BB8F341B1CC54A008A37C5 /* TJLProgressViewFramework.framework */; };
+		17BB8F4C1B1CC54A008A37C5 /* TJLProgressViewFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 17BB8F341B1CC54A008A37C5 /* TJLProgressViewFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		17BB8F541B1CC54F008A37C5 /* TJLProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7426C46623F341D2CF3464E6 /* TJLProgressView.m */; };
+		17BB8F551B1CC552008A37C5 /* TJLProgressView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7426C5BC4C2402224E5FDA3B /* TJLProgressView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7426C706635A31F1CC8BE803 /* TJLProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7426C46623F341D2CF3464E6 /* TJLProgressView.m */; };
 		7426C77F7D20C8F867AFE11C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7426CE416F61023BFBD0323E /* Main.storyboard */; };
 		7426CAABBABCAF2FCB160A2A /* TJLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7426CBBE00E77BF34F816897 /* TJLAppDelegate.m */; };
@@ -17,24 +22,36 @@
 		DB14A64718C8229A00F1D5BF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB14A64518C8229A00F1D5BF /* InfoPlist.strings */; };
 		DB14A64918C8229A00F1D5BF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DB14A64818C8229A00F1D5BF /* main.m */; };
 		DB14A65518C8229A00F1D5BF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB14A65418C8229A00F1D5BF /* Images.xcassets */; };
-		DB14A65C18C8229A00F1D5BF /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB14A65B18C8229A00F1D5BF /* XCTest.framework */; };
-		DB14A65D18C8229A00F1D5BF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB14A63C18C8229A00F1D5BF /* Foundation.framework */; };
-		DB14A65E18C8229A00F1D5BF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB14A64018C8229A00F1D5BF /* UIKit.framework */; };
-		DB14A66618C8229A00F1D5BF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB14A66418C8229A00F1D5BF /* InfoPlist.strings */; };
-		DB14A66818C8229A00F1D5BF /* TJLProgressViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB14A66718C8229A00F1D5BF /* TJLProgressViewTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		DB14A65F18C8229A00F1D5BF /* PBXContainerItemProxy */ = {
+		17BB8F491B1CC54A008A37C5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DB14A63118C8229A00F1D5BF /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = DB14A63818C8229A00F1D5BF;
-			remoteInfo = TJLProgressView;
+			remoteGlobalIDString = 17BB8F331B1CC54A008A37C5;
+			remoteInfo = TJLProgressViewFramework;
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		17BB8F521B1CC54A008A37C5 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				17BB8F4C1B1CC54A008A37C5 /* TJLProgressViewFramework.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		17BB8F341B1CC54A008A37C5 /* TJLProgressViewFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TJLProgressViewFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		17BB8F371B1CC54A008A37C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		17BB8F381B1CC54A008A37C5 /* TJLProgressViewFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TJLProgressViewFramework.h; sourceTree = "<group>"; };
 		7426C0CCEC67E7E3EA7E94A8 /* TJLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TJLViewController.m; sourceTree = "<group>"; };
 		7426C113502F157435EE1C96 /* TJLAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TJLAppDelegate.h; sourceTree = "<group>"; };
 		7426C24DB8284AEFDE922D2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -51,37 +68,48 @@
 		DB14A64818C8229A00F1D5BF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DB14A64A18C8229A00F1D5BF /* TJLProgressView-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TJLProgressView-Prefix.pch"; sourceTree = "<group>"; };
 		DB14A65418C8229A00F1D5BF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		DB14A65A18C8229A00F1D5BF /* TJLProgressViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TJLProgressViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB14A65B18C8229A00F1D5BF /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		DB14A66318C8229A00F1D5BF /* TJLProgressViewTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TJLProgressViewTests-Info.plist"; sourceTree = "<group>"; };
-		DB14A66518C8229A00F1D5BF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		DB14A66718C8229A00F1D5BF /* TJLProgressViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TJLProgressViewTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		17BB8F301B1CC54A008A37C5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DB14A63618C8229A00F1D5BF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				DB14A63F18C8229A00F1D5BF /* CoreGraphics.framework in Frameworks */,
 				DB14A64118C8229A00F1D5BF /* UIKit.framework in Frameworks */,
+				17BB8F4B1B1CC54A008A37C5 /* TJLProgressViewFramework.framework in Frameworks */,
 				DB14A63D18C8229A00F1D5BF /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DB14A65718C8229A00F1D5BF /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DB14A65C18C8229A00F1D5BF /* XCTest.framework in Frameworks */,
-				DB14A65E18C8229A00F1D5BF /* UIKit.framework in Frameworks */,
-				DB14A65D18C8229A00F1D5BF /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		17BB8F351B1CC54A008A37C5 /* TJLProgressViewFramework */ = {
+			isa = PBXGroup;
+			children = (
+				17BB8F381B1CC54A008A37C5 /* TJLProgressViewFramework.h */,
+				17BB8F361B1CC54A008A37C5 /* Supporting Files */,
+			);
+			path = TJLProgressViewFramework;
+			sourceTree = "<group>";
+		};
+		17BB8F361B1CC54A008A37C5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				17BB8F371B1CC54A008A37C5 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		7426C360BC22F71DC2609BB2 /* Source */ = {
 			isa = PBXGroup;
 			children = (
@@ -114,7 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				DB14A64218C8229A00F1D5BF /* TJLProgressView */,
-				DB14A66118C8229A00F1D5BF /* TJLProgressViewTests */,
+				17BB8F351B1CC54A008A37C5 /* TJLProgressViewFramework */,
 				DB14A63B18C8229A00F1D5BF /* Frameworks */,
 				DB14A63A18C8229A00F1D5BF /* Products */,
 			);
@@ -124,7 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				DB14A63918C8229A00F1D5BF /* TJLProgressView.app */,
-				DB14A65A18C8229A00F1D5BF /* TJLProgressViewTests.xctest */,
+				17BB8F341B1CC54A008A37C5 /* TJLProgressViewFramework.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -163,27 +191,39 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		DB14A66118C8229A00F1D5BF /* TJLProgressViewTests */ = {
-			isa = PBXGroup;
-			children = (
-				DB14A66718C8229A00F1D5BF /* TJLProgressViewTests.m */,
-				DB14A66218C8229A00F1D5BF /* Supporting Files */,
-			);
-			path = TJLProgressViewTests;
-			sourceTree = "<group>";
-		};
-		DB14A66218C8229A00F1D5BF /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				DB14A66318C8229A00F1D5BF /* TJLProgressViewTests-Info.plist */,
-				DB14A66418C8229A00F1D5BF /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		17BB8F311B1CC54A008A37C5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17BB8F391B1CC54A008A37C5 /* TJLProgressViewFramework.h in Headers */,
+				17BB8F551B1CC552008A37C5 /* TJLProgressView.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		17BB8F331B1CC54A008A37C5 /* TJLProgressViewFramework */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 17BB8F511B1CC54A008A37C5 /* Build configuration list for PBXNativeTarget "TJLProgressViewFramework" */;
+			buildPhases = (
+				17BB8F2F1B1CC54A008A37C5 /* Sources */,
+				17BB8F301B1CC54A008A37C5 /* Frameworks */,
+				17BB8F311B1CC54A008A37C5 /* Headers */,
+				17BB8F321B1CC54A008A37C5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TJLProgressViewFramework;
+			productName = TJLProgressViewFramework;
+			productReference = 17BB8F341B1CC54A008A37C5 /* TJLProgressViewFramework.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		DB14A63818C8229A00F1D5BF /* TJLProgressView */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = DB14A66B18C8229A00F1D5BF /* Build configuration list for PBXNativeTarget "TJLProgressView" */;
@@ -191,33 +231,17 @@
 				DB14A63518C8229A00F1D5BF /* Sources */,
 				DB14A63618C8229A00F1D5BF /* Frameworks */,
 				DB14A63718C8229A00F1D5BF /* Resources */,
+				17BB8F521B1CC54A008A37C5 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				17BB8F4A1B1CC54A008A37C5 /* PBXTargetDependency */,
 			);
 			name = TJLProgressView;
 			productName = TJLProgressView;
 			productReference = DB14A63918C8229A00F1D5BF /* TJLProgressView.app */;
 			productType = "com.apple.product-type.application";
-		};
-		DB14A65918C8229A00F1D5BF /* TJLProgressViewTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DB14A66E18C8229A00F1D5BF /* Build configuration list for PBXNativeTarget "TJLProgressViewTests" */;
-			buildPhases = (
-				DB14A65618C8229A00F1D5BF /* Sources */,
-				DB14A65718C8229A00F1D5BF /* Frameworks */,
-				DB14A65818C8229A00F1D5BF /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				DB14A66018C8229A00F1D5BF /* PBXTargetDependency */,
-			);
-			name = TJLProgressViewTests;
-			productName = TJLProgressViewTests;
-			productReference = DB14A65A18C8229A00F1D5BF /* TJLProgressViewTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -229,8 +253,8 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Blue Plover Productions LLC";
 				TargetAttributes = {
-					DB14A65918C8229A00F1D5BF = {
-						TestTargetID = DB14A63818C8229A00F1D5BF;
+					17BB8F331B1CC54A008A37C5 = {
+						CreatedOnToolsVersion = 6.3.2;
 					};
 				};
 			};
@@ -248,12 +272,19 @@
 			projectRoot = "";
 			targets = (
 				DB14A63818C8229A00F1D5BF /* TJLProgressView */,
-				DB14A65918C8229A00F1D5BF /* TJLProgressViewTests */,
+				17BB8F331B1CC54A008A37C5 /* TJLProgressViewFramework */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		17BB8F321B1CC54A008A37C5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DB14A63718C8229A00F1D5BF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -264,17 +295,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DB14A65818C8229A00F1D5BF /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DB14A66618C8229A00F1D5BF /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		17BB8F2F1B1CC54A008A37C5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17BB8F541B1CC54F008A37C5 /* TJLProgressView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DB14A63518C8229A00F1D5BF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -286,21 +317,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DB14A65618C8229A00F1D5BF /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DB14A66818C8229A00F1D5BF /* TJLProgressViewTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		DB14A66018C8229A00F1D5BF /* PBXTargetDependency */ = {
+		17BB8F4A1B1CC54A008A37C5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = DB14A63818C8229A00F1D5BF /* TJLProgressView */;
-			targetProxy = DB14A65F18C8229A00F1D5BF /* PBXContainerItemProxy */;
+			target = 17BB8F331B1CC54A008A37C5 /* TJLProgressViewFramework */;
+			targetProxy = 17BB8F491B1CC54A008A37C5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -321,17 +344,66 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		DB14A66418C8229A00F1D5BF /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DB14A66518C8229A00F1D5BF /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		17BB8F4D1B1CC54A008A37C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = TJLProgressViewFramework/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		17BB8F4E1B1CC54A008A37C5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = TJLProgressViewFramework/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		DB14A66918C8229A00F1D5BF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -410,6 +482,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TJLProgressView/TJLProgressView-Prefix.pch";
 				INFOPLIST_FILE = "TJLProgressView/TJLProgressView-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -423,54 +496,23 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TJLProgressView/TJLProgressView-Prefix.pch";
 				INFOPLIST_FILE = "TJLProgressView/TJLProgressView-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
-		DB14A66F18C8229A00F1D5BF /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TJLProgressView.app/TJLProgressView";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "TJLProgressView/TJLProgressView-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "TJLProgressViewTests/TJLProgressViewTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		DB14A67018C8229A00F1D5BF /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TJLProgressView.app/TJLProgressView";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "TJLProgressView/TJLProgressView-Prefix.pch";
-				INFOPLIST_FILE = "TJLProgressViewTests/TJLProgressViewTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		17BB8F511B1CC54A008A37C5 /* Build configuration list for PBXNativeTarget "TJLProgressViewFramework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				17BB8F4D1B1CC54A008A37C5 /* Debug */,
+				17BB8F4E1B1CC54A008A37C5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		DB14A63418C8229A00F1D5BF /* Build configuration list for PBXProject "TJLProgressView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -485,15 +527,6 @@
 			buildConfigurations = (
 				DB14A66C18C8229A00F1D5BF /* Debug */,
 				DB14A66D18C8229A00F1D5BF /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		DB14A66E18C8229A00F1D5BF /* Build configuration list for PBXNativeTarget "TJLProgressViewTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DB14A66F18C8229A00F1D5BF /* Debug */,
-				DB14A67018C8229A00F1D5BF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
