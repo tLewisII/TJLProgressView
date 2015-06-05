@@ -145,4 +145,10 @@ void *observerContext = &observerContext;
     }
 }
 
+- (void)dealloc {
+    if (self.progressIndicator.fractionCompleted != 1) {
+        [self.progressIndicator removeObserver:self forKeyPath:@"fractionCompleted"];
+    }
+}
+
 @end
