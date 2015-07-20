@@ -136,7 +136,6 @@ void *observerContext = &observerContext;
                     self.alpha = 0;
                 }                completion:^(BOOL finished) {
                     if(finished) {
-                        [self.progressIndicator removeObserver:self forKeyPath:@"fractionCompleted"];
                         [self removeFromSuperview];
                     }
                 }];
@@ -146,9 +145,8 @@ void *observerContext = &observerContext;
 }
 
 - (void)dealloc {
-    if (self.progressIndicator.fractionCompleted != 1) {
+        NSLog(@"progressView dealloc");
         [self.progressIndicator removeObserver:self forKeyPath:@"fractionCompleted"];
-    }
 }
 
 @end
